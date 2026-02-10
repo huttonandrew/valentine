@@ -9,6 +9,7 @@
       text-align: center;
       margin-top: 100px;
       background: #ffe6eb;
+      overflow: hidden;
     }
 
     h1 {
@@ -31,13 +32,14 @@
 
     #no {
       background: #ccc;
+      position: absolute;
     }
   </style>
 </head>
 <body>
 
   <h1>Will you be my Valentine pretty girl? ❤️</h1>
-  <p>— from Drew</p>
+  <p>— from Your future husband</p>
 
   <button id="yes" onclick="yes()">Yes</button>
   <button id="no" onclick="no()">No</button>
@@ -45,11 +47,20 @@
   <script>
     function yes() {
       document.body.innerHTML =
-        "<h1>IM SO GIDDY 💖</h1><p>I love you. </p>";
+        "<h1>IM SO GIDDY 💖</h1><p>I love you so much and I can't wait to see you.</p>";
     }
 
     function no() {
-      alert("HOW DARE YOU 😌");
+      const btn = document.getElementById("no");
+
+      const maxX = window.innerWidth - btn.offsetWidth;
+      const maxY = window.innerHeight - btn.offsetHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
     }
   </script>
 
