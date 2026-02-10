@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I love you</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #ffe6eb;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine pretty girl? ❤️</h1>
+  <p>— from Andrew</p>
+
+  <button id="yes" onclick="yes()">Yes</button>
+  <button id="no" onclick="no()">No</button>
+
+  <script>
+    function yes() {
+      document.body.innerHTML =
+        "<h1>IM SO GIDDY 💖</h1><p>I love you. </p>";
+    }
+
+    function no() {
+      alert("HOW DARE YOU 😌");
+    }
+  </script>
+
+</body>
+</html>
