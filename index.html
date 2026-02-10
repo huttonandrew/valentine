@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>I love you</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -34,6 +35,52 @@
       background: #ccc;
       position: absolute;
     }
+
+    /* ---- little plane animation ---- */
+
+    #map {
+      position: relative;
+      width: 420px;
+      height: 180px;
+      margin: 30px auto;
+      border-radius: 12px;
+      background: linear-gradient(#cce7ff, #eef6ff);
+      overflow: hidden;
+    }
+
+    .city {
+      position: absolute;
+      font-size: 12px;
+    }
+
+    #slc { left: 20px; top: 110px; }
+    #lille { right: 20px; top: 40px; }
+
+    #path {
+      position: absolute;
+      left: 40px;
+      top: 120px;
+      width: 330px;
+      height: 1px;
+      border-top: 2px dashed #555;
+    }
+
+    #plane {
+      position: absolute;
+      left: 30px;
+      top: 105px;
+      font-size: 22px;
+      animation: fly 4s linear forwards;
+    }
+
+    @keyframes fly {
+      from {
+        transform: translateX(0) translateY(0);
+      }
+      to {
+        transform: translateX(330px) translateY(-70px);
+      }
+    }
   </style>
 </head>
 <body>
@@ -45,12 +92,22 @@
   <button id="no" onclick="no()">No</button>
 
   <script>
-   function yes() {
-  document.body.innerHTML =
-    "<h1>IM SO GIDDY 💖</h1>" +
-    "<p>thank you for being my favorite person to talk to every day.</p>" +
-    "<p>i can't wait to see you ❤️</p>";
-}
+    function yes() {
+      document.body.innerHTML = `
+        <h1>IM SO GIDDY 💖</h1>
+        <p>thank you for being my favorite person to talk to every day.</p>
+        <p>i can't wait to see you ❤️</p>
+
+        <div id="map">
+          <div id="path"></div>
+
+          <div id="plane">✈️</div>
+
+          <div class="city" id="slc">SLC, Utah</div>
+          <div class="city" id="lille">Lille, France</div>
+        </div>
+      `;
+    }
 
     function no() {
       const btn = document.getElementById("no");
