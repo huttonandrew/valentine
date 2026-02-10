@@ -36,7 +36,7 @@
       position: absolute;
     }
 
-    /* ---- little plane animation ---- */
+    /* ---- plane animation ---- */
 
     #map {
       position: relative;
@@ -51,77 +51,23 @@
     .city {
       position: absolute;
       font-size: 12px;
+      color: #222;
     }
 
-    #slc { left: 20px; top: 110px; }
-    #lille { right: 20px; top: 40px; }
+    #slc { left: 18px; top: 118px; }
+    #lille { right: 18px; top: 38px; }
 
+    /* FIXED: diagonal flight path */
     #path {
       position: absolute;
       left: 40px;
-      top: 120px;
+      top: 125px;
       width: 330px;
-      height: 1px;
       border-top: 2px dashed #555;
+      transform-origin: left center;
+      transform: rotate(-12deg);
     }
 
     #plane {
       position: absolute;
-      left: 30px;
-      top: 105px;
-      font-size: 22px;
-      animation: fly 4s linear forwards;
-    }
-
-    @keyframes fly {
-      from {
-        transform: translateX(0) translateY(0);
-      }
-      to {
-        transform: translateX(330px) translateY(-70px);
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Will you be my Valentine pretty girl? ❤️</h1>
-  <p>— from your future husband</p>
-
-  <button id="yes" onclick="yes()">Yes</button>
-  <button id="no" onclick="no()">No</button>
-
-  <script>
-    function yes() {
-      document.body.innerHTML = `
-        <h1>IM SO GIDDY 💖</h1>
-        <p>thank you for being my favorite person to talk to every day.</p>
-        <p>i can't wait to see you ❤️</p>
-
-        <div id="map">
-          <div id="path"></div>
-
-          <div id="plane">✈️</div>
-
-          <div class="city" id="slc">SLC, Utah</div>
-          <div class="city" id="lille">Lille, France</div>
-        </div>
-      `;
-    }
-
-    function no() {
-      const btn = document.getElementById("no");
-
-      const maxX = window.innerWidth - btn.offsetWidth;
-      const maxY = window.innerHeight - btn.offsetHeight;
-
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
-
-      btn.style.left = x + "px";
-      btn.style.top = y + "px";
-    }
-  </script>
-
-</body>
-</html>
+      left: 30p
