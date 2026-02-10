@@ -70,4 +70,61 @@
 
     #plane {
       position: absolute;
-      left: 30p
+      left: 30px;
+      top: 108px;
+      font-size: 22px;
+      animation: fly 4s linear forwards;
+    }
+
+    @keyframes fly {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(330px, -70px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine pretty girl? ❤️</h1>
+  <p>— from your future husband</p>
+
+  <button id="yes" onclick="yes()">Yes</button>
+  <button id="no" onclick="no()">No</button>
+
+  <script>
+    function yes() {
+      document.body.innerHTML = `
+        <h1>IM SO GIDDY 💖</h1>
+        <p>thank you for being my favorite person to talk to every day.</p>
+        <p>i can't wait to see you 💗</p>
+
+        <div id="map">
+          <div id="path"></div>
+          <div id="plane">✈️</div>
+
+          <div class="city" id="slc">SLC, Utah</div>
+          <div class="city" id="lille">Lille, France</div>
+        </div>
+      `;
+    }
+
+    function no() {
+      const btn = document.getElementById("no");
+
+      const maxX = window.innerWidth - btn.offsetWidth;
+      const maxY = window.innerHeight - btn.offsetHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
+    }
+  </script>
+
+</body>
+</html>
+
